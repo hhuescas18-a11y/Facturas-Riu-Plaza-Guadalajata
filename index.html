@@ -2,257 +2,390 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIU Plaza Guadalajara - Solicitud de Factura Premium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>RIU Plaza Guadalajara - Elite Experience</title>
     <style>
-        /* * ARQUITECTURA DE DISE—O: CSS VARIABLES 
-         * Paleta de colores Premium: Azul Rey Fuerte y Dorado de lujo.
-         */
+        /* * ==========================================
+         * ARQUITECTURA VISUAL ULTRA-PREMIUM Y PROTECCI√ìN
+         * ========================================== */
         :root {
-            --color-fondo-profundo: #001A33; /* Fondo azul marino muy oscuro */
-            --color-dorado-primario: #FFD700; /* Dorado brillante */
-            --color-dorado-oscuro: #CCAC00; /* Dorado para degradados */
-            --color-texto-blanco: #FFFFFF;
-            --color-cristal: rgba(255, 255, 255, 0.08); /* Fondo transl˙cido del cristal */
-            --borde-cristal: rgba(255, 215, 0, 0.3); /* Borde sutil dorado */
+            --fondo-espacial: #001226; 
+            --dorado-brillante: #FFD700;
+            --dorado-profundo: #B39700;
+            --rojo-riu: #E50027;
+            --texto-puro: #FFFFFF;
+            --borde-luz: rgba(255, 215, 0, 0.3);
         }
 
-        /* Reseteo para eliminar m·rgenes del navegador y garantizar un lienzo limpio */
-        body, html {
+        /* Bloqueo total de selecci√≥n para proteger propiedad intelectual */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--color-fondo-profundo);
-            overflow: hidden; /* Evita que el usuario pueda scrollear accidentalmente */
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none;
+        }
+
+        body, html {
+            width: 100vw;
+            min-height: 100dvh;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--fondo-espacial);
+            overflow: hidden; 
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* Lienzo de simulaciÛn fÌsica acelerado por GPU (Fondo animado) */
         #lienzoParticulas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Se mantiene en el fondo */
+            z-index: 1;
+            pointer-events: none;
         }
 
-        /* * ARQUITECTURA GLASSMORPHISM 
-         * Crea el efecto de cristal elegante flotante utilizando desenfoque de fondo.
-         */
-        .tarjeta-cristal {
+        .panel-tecnologico {
             position: relative;
-            z-index: 10; /* Se coloca por encima de las partÌculas */
-            background: var(--color-cristal);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px); /* Soporte para iPhones (Safari) */
-            border: 1px solid var(--borde-cristal);
-            border-radius: 20px;
-            padding: 40px 30px;
-            max-width: 90%;
-            width: 450px;
+            z-index: 10;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.4) 100%);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid var(--borde-luz);
+            border-top: 1px solid rgba(255,215,0,0.5);
+            border-left: 1px solid rgba(255,215,0,0.5);
+            border-radius: 28px;
+            padding: 45px 30px;
+            width: 92%;
+            max-width: 440px;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.9), inset 0 0 40px rgba(255,215,0,0.05);
         }
 
-        /* Estilos del Contenedor del Logo SVG */
-        .contenedor-logo {
-            margin-bottom: 25px;
+        .contenedor-logo { margin-bottom: 15px; }
+
+        .saludo-dinamico {
+            color: var(--dorado-brillante);
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+            text-shadow: 0 0 15px rgba(255,215,0,0.4);
         }
 
-        h1 {
-            color: var(--color-dorado-primario);
-            font-size: 26px;
-            margin-top: 0;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            font-weight: 700;
+        .reloj-digital {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            font-family: monospace;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
         }
 
         p {
-            color: var(--color-texto-blanco);
-            font-size: 18px;
+            color: var(--texto-puro);
+            font-size: 17px;
             line-height: 1.6;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             font-weight: 300;
+            padding: 0 5px;
         }
 
-        /* Resaltado de tÈrminos clave solicitados en Dorado */
         strong {
-            color: var(--color-dorado-primario);
-            font-weight: 600;
+            color: var(--dorado-brillante);
+            font-weight: 700;
         }
 
-        /* * EL BOT”N M¡GICO: GIGANTE Y ACCESIBLE
-         * DiseÒado para ser f·cil de presionar con el pulgar.
-         */
-        .boton-dorado {
-            display: block;
-            background: linear-gradient(135deg, var(--color-dorado-primario) 0%, var(--color-dorado-oscuro) 100%);
-            color: var(--color-fondo-profundo);
-            font-size: 20px;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 20px 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(204, 172, 0, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        /* Bot√≥n Tecnol√≥gico y Destello de Luz */
+        .area-accion {
+            position: relative;
+            min-height: 80px;
+        }
+
+        .boton-plasma {
+            width: 100%;
+            padding: 22px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(255,215,0,0.03) 100%);
+            border: 1px solid var(--dorado-brillante);
+            border-radius: 14px;
+            color: var(--dorado-brillante);
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             cursor: pointer;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,215,0,0.2);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            overflow: hidden;
         }
 
-        .boton-dorado:hover, .boton-dorado:active {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(204, 172, 0, 0.5);
-            outline: none;
+        .boton-plasma::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+            transform: skewX(-30deg);
+            animation: rayo-luz 4s infinite;
+        }
+
+        @keyframes rayo-luz {
+            0% { left: -100%; }
+            12% { left: 200%; }
+            100% { left: 200%; }
+        }
+
+        .boton-plasma:active {
+            transform: scale(0.96);
+            background: var(--dorado-brillante);
+            color: var(--fondo-espacial);
+            box-shadow: 0 0 50px var(--dorado-brillante);
+        }
+
+        /* Interfaz de Carga Secuencial */
+        .pantalla-carga {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 10, 20, 0.99);
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 3;
+            transition: opacity 0.4s ease;
+        }
+
+        .pantalla-carga.activa {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .texto-carga {
+            color: var(--dorado-brillante);
+            font-size: 15px;
+            font-family: monospace;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .porcentaje-carga {
+            color: var(--texto-puro);
+            font-size: 46px;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
-    <canvas id="lienzoParticulas" aria-hidden="true"></canvas>
+    <canvas id="lienzoParticulas"></canvas>
 
-    <main>
-        <article class="tarjeta-cristal">
+    <main class="panel-tecnologico">
+        
+        <div class="contenedor-logo">
+            <svg width="220" height="80" viewBox="0 0 220 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#E50027" flood-opacity="0.7"/>
+                    </filter>
+                </defs>
+                <text x="50%" y="45" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#E50027" filter="url(#glow)" text-anchor="middle" letter-spacing="5">RIU</text>
+                <text x="50%" y="68" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">PLAZA GUADALAJARA</text>
+            </svg>
+        </div>
+
+        <div id="saludo" class="saludo-dinamico">Estableciendo...</div>
+        <div id="reloj" class="reloj-digital">00:00:00</div>
+        
+        <p>Estimado cliente, tenga a la mano su <strong>TICKET</strong> y sus <strong>DATOS FISCALES</strong>. El sistema redactar√° su solicitud de inmediato.</p>
+
+        <div class="area-accion">
+            <button id="btn-iniciar" class="boton-plasma">CONTINUAR AL CORREO</button>
             
-            <div class="contenedor-logo" aria-hidden="true">
-                <svg width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
-                    <text x="50%" y="45" font-family="Georgia, serif" font-size="38" font-weight="bold" fill="#FFD700" text-anchor="middle" letter-spacing="4">RIU</text>
-                    <text x="50%" y="60" font-family="system-ui, sans-serif" font-size="10" font-weight="normal" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">PLAZA GUADALAJARA</text>
-                </svg>
+            <div id="ui-carga" class="pantalla-carga">
+                <div id="texto-estado" class="texto-carga">Iniciando...</div>
+                <div id="texto-porcentaje" class="porcentaje-carga">0%</div>
             </div>
+        </div>
 
-            <h1 id="titulo-instruccion">Solicitud de Factura</h1>
-            
-            <p>Estimado cliente, recuerde adjuntar su <strong>ticket escaneado</strong> y sus <strong>datos fiscales</strong> al correo para poder procesar su solicitud de inmediato.</p>
-
-            <a href="mailto:factura.plazaguadalajara@riu.com?subject=Solicitud%20de%20Factura%20-%20Consumo%20en%20RIU%20Plaza%20Guadalajara&body=Buen%20d%C3%ADa.%0A%0APor%20medio%20del%20presente%20solicito%20atentamente%20la%20factura%20correspondiente%20a%20mi%20consumo%20en%20el%20hotel.%0A%0AAdjunto%20a%20este%20correo%20la%20imagen%20legible%20de%20mi%20ticket%20de%20compra%20y%20mis%20datos%20fiscales%20completos%20(RFC%2C%20Raz%C3%B3n%20Social%2C%20Direcci%C3%B3n%2C%20etc.)%20para%20la%20generaci%C3%B3n%20de%20la%20misma.%0A%0AAgradezco%20de%20antemano%20su%20amable%20atenci%C3%B3n%20y%20apoyo%20con%20mi%20solicitud.%20Que%20tenga%20un%20excelente%20d%C3%ADa." 
-               class="boton-dorado" 
-               aria-labelledby="titulo-instruccion">
-                Redactar Correo Autom·tico
-            </a>
-            
-        </article>
+        <a id="disparador-correo" style="display:none;" href="#"></a>
     </main>
 
     <script>
         /**
-         * @fileoverview Arquitectura de SimulaciÛn de PartÌculas Doradas (Fondo Animado).
-         * @description ImplementaciÛn optimizada en JavaScript puro (Vanilla JS) usando requestAnimationFrame.
+         * @fileoverview N√öCLEO L√ìGICO DE INGENIER√çA EXTREMA (Conteo 1x1, Micro-Vibraci√≥n, Anti-Hack)
          */
 
-        class Particula {
-            /**
-             * Representa un punto dorado flotante en la pantalla.
-             */
-            constructor(anchoPantalla, altoPantalla) {
-                this.reiniciar(anchoPantalla, altoPantalla);
-            }
+        // 1. ESCUDO ANTI-DEPURACI√ìN Y COPIA
+        document.onkeydown = (e) => {
+            if(e.keyCode === 123 || (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 67))) return false;
+        };
 
-            /**
-             * Devuelve la partÌcula a una posiciÛn aleatoria dentro de la pantalla.
-             */
-            reiniciar(anchoPantalla, altoPantalla) {
-                this.x = Math.random() * anchoPantalla;
-                this.y = Math.random() * altoPantalla;
-                // Radio matem·tico pequeÒo para sutileza
-                this.radio = Math.random() * 1.5 + 0.5;
-                // Velocidad vectorial aleatoria
-                this.velocidadX = (Math.random() - 0.5) * 20; 
-                this.velocidadY = (Math.random() - 0.5) * 20;
-                // Opacidad aleatoria para dar profundidad
-                this.opacidad = Math.random() * 0.5 + 0.1;
-            }
+        const _0xadj=["Poderoso","Extraordinario","Magn√≠fico","Incre√≠ble","Fabuloso","Imparable","Productivo","Grandioso","Genial","Espectacular","Fant√°stico","Estupendo","Brillante","Excelente","Memorable"];
+        const _0xds=["domingo","lunes","martes","mi√©rcoles","jueves","viernes","s√°bado"];
 
-            /**
-             * Actualiza la posiciÛn bas·ndose en el tiempo transcurrido (Delta Time).
-             */
-            actualizarPosicion(tiempoDiferencial, anchoPantalla, altoPantalla) {
-                this.x += this.velocidadX * tiempoDiferencial;
-                this.y += this.velocidadY * tiempoDiferencial;
+        // 2. HUD INTELIGENTE (Reloj y Saludo Ortogr√°fico Perfecto)
+        function _0xHUD(){
+            const _0xn=new Date();
+            const _0xop={year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true};
+            document.getElementById('reloj').innerText=_0xn.toLocaleDateString('es-MX',_0xop).toUpperCase().replace(',', ' |');
 
-                // Si la partÌcula sale de la pantalla, reaparece al otro lado (Efecto toroide infinito)
-                if (this.x < 0) this.x = anchoPantalla;
-                if (this.x > anchoPantalla) this.x = 0;
-                if (this.y < 0) this.y = altoPantalla;
-                if (this.y > altoPantalla) this.y = 0;
-            }
-
-            /**
-             * Dibuja la partÌcula en el lienzo digital.
-             */
-            dibujarElemento(contexto) {
-                contexto.beginPath();
-                contexto.arc(this.x, this.y, this.radio, 0, Math.PI * 2);
-                contexto.fillStyle = `rgba(255, 215, 0, ${this.opacidad})`;
-                contexto.fill();
+            if(document.getElementById('saludo').innerText==="Estableciendo..."){
+                const _0xh=_0xn.getHours();
+                let _0xsaludoTiempo = _0xh < 12 ? "BUENOS D√çAS" : _0xh < 19 ? "BUENAS TARDES" : "BUENAS NOCHES";
+                const _0xa=_0xadj[Math.floor(Math.random()*_0xadj.length)].toUpperCase();
+                const _0xd=_0xds[_0xn.getDay()].toUpperCase();
+                document.getElementById('saludo').innerText=`¬°${_0xsaludoTiempo}! ${_0xa} ${_0xd}`;
             }
         }
+        setInterval(_0xHUD,1000);_0xHUD();
 
-        class MotorVisualizador {
-            constructor() {
-                this.lienzo = document.getElementById('lienzoParticulas');
-                this.contexto = this.lienzo.getContext('2d');
-                this.particulas = [];
-                // Cantidad conservadora para cuidar la memoria RAM y baterÌa del celular
-                this.cantidadParticulas = 40; 
-                this.tiempoAnterior = performance.now();
-                
-                this.inicializarDimensiones();
-                this.crearPoblacionInicial();
-                
-                // Aseguramos que el motor responda si rotan el celular o cambian de tamaÒo la ventana
-                window.addEventListener('resize', () => this.inicializarDimensiones());
-                
-                // Arrancamos el ciclo de vida de la animaciÛn
-                this.iniciarCicloRenderizado();
-            }
+        // 3. COMPILADOR DIN√ÅMICO DE CORREO (Fechas exactas, sin 'Atentamente')
+        function _0xMail(){
+            const _0xn=new Date();
+            const _0xh=_0xn.getHours();
+            const _0xd=_0xds[_0xn.getDay()];
+            const _0xf=String(_0xn.getDate()).padStart(2,'0')+'/'+String(_0xn.getMonth()+1).padStart(2,'0')+'/'+_0xn.getFullYear();
+            
+            let _0xs=_0xh<12?"Buen d√≠a":_0xh<19?"Buenas tardes":"Buenas noches";
+            let _0xt="";
+            if(_0xh>=0 && _0xh<6) _0xt="madrugada";
+            else if(_0xh>=6 && _0xh<12) _0xt="ma√±ana";
+            else if(_0xh>=12 && _0xh<19) _0xt="tarde";
+            else _0xt="noche";
 
-            inicializarDimensiones() {
-                // Ajustamos la resoluciÛn interna del lienzo a la pantalla real visible
-                this.lienzo.width = window.innerWidth;
-                this.lienzo.height = window.innerHeight;
-            }
+            const _0xsub=`Solicitud de Factura - Consumo en RIU Plaza Guadalajara [${_0xf}]`;
+            const _0xbody=
+`${_0xs}.
 
-            crearPoblacionInicial() {
-                this.particulas = [];
-                for (let i = 0; i < this.cantidadParticulas; i++) {
-                    this.particulas.push(new Particula(this.lienzo.width, this.lienzo.height));
-                }
-            }
+Por medio del presente solicito atentamente la factura correspondiente a mi consumo en el hotel.
 
-            /**
-             * Ciclo vital impulsado por requestAnimationFrame para sincronizar con el monitor.
-             */
-            iniciarCicloRenderizado(tiempoActual = performance.now()) {
-                // 1. Calcular Delta Time (dt) en segundos
-                const tiempoDiferencial = (tiempoActual - this.tiempoAnterior) / 1000;
-                this.tiempoAnterior = tiempoActual;
+Adjunto a este correo la imagen legible de mi ticket de compra y mis datos fiscales completos (RFC, Raz√≥n Social, Direcci√≥n, etc.) para la generaci√≥n de la misma.
 
-                // 2. Limpiar la pantalla por completo del cuadro anterior
-                this.contexto.clearRect(0, 0, this.lienzo.width, this.lienzo.height);
+Agradezco de antemano su amable atenci√≥n y apoyo con mi solicitud. Que siga teniendo una excelente ${_0xt} de ${_0xd}.`;
 
-                // 3. Actualizar matem·tica y dibujar cada partÌcula
-                for (let i = 0; i < this.particulas.length; i++) {
-                    const particula = this.particulas[i];
-                    particula.actualizarPosicion(tiempoDiferencial, this.lienzo.width, this.lienzo.height);
-                    particula.dibujarElemento(this.contexto);
-                }
-
-                // 4. Solicitar el siguiente cuadro a la tarjeta gr·fica (Recursividad controlada)
-                requestAnimationFrame((nuevoTiempo) => this.iniciarCicloRenderizado(nuevoTiempo));
-            }
+            const _0xuri=`mailto:factura.plazaguadalajara@riu.com?subject=${encodeURIComponent(_0xsub)}&body=${encodeURIComponent(_0xbody)}`;
+            const _0xl=document.getElementById('disparador-correo');
+            _0xl.href=_0xuri;
+            _0xl.click();
         }
 
-        // Encender el motor visual una vez que la estructura HTML est· construida
-        document.addEventListener('DOMContentLoaded', () => {
-            const motorVisual = new MotorVisualizador();
+        // 4. MOTOR DE PROCESAMIENTO LINEAL (Conteo 1 a 1 en exactamente 3 segundos)
+        const _0xb=document.getElementById('btn-iniciar');
+        const _0xu=document.getElementById('ui-carga');
+        const _0xe=document.getElementById('texto-estado');
+        const _0xp=document.getElementById('texto-porcentaje');
+
+        _0xb.addEventListener('click',()=>{
+            // MICRO-VIBRACI√ìN DE ALTA INGENIER√çA: Clic n√≠tido y r√°pido
+            if(navigator.vibrate) navigator.vibrate([15, 30, 15]);
+            
+            _0xu.classList.add('activa');
+            let _0xinicio = null;
+            const _0xduracionTotal = 3000; // Exactamente 3 segundos matem√°ticos
+            let _0xporcentajeAnterior = -1;
+
+            function _0xProcesarCarga(_0xtiempoActual){
+                if(!_0xinicio) _0xinicio = _0xtiempoActual;
+                const _0xtiempoTranscurrido = _0xtiempoActual - _0xinicio;
+                
+                // Interpolaci√≥n Lineal Pura (Asegura que corra de 1 en 1, sin saltos raros)
+                let _0xprogreso = Math.min(_0xtiempoTranscurrido / _0xduracionTotal, 1);
+                const _0xporcentajeActual = Math.floor(_0xprogreso * 100);
+
+                // Solo actualizar el DOM si el n√∫mero entero cambi√≥ (optimizaci√≥n extrema)
+                if (_0xporcentajeActual !== _0xporcentajeAnterior) {
+                    _0xp.innerText = _0xporcentajeActual + '%';
+                    _0xporcentajeAnterior = _0xporcentajeActual;
+
+                    // Textos secuenciales solicitados por el Arquitecto Horacio
+                    if(_0xporcentajeActual < 25) _0xe.innerText = "Redactando correo...";
+                    else if(_0xporcentajeActual < 50) _0xe.innerText = "Redactando asunto...";
+                    else if(_0xporcentajeActual < 75) _0xe.innerText = "Insertando fecha del d√≠a...";
+                    else if(_0xporcentajeActual < 100) _0xe.innerText = "Aplicando firma de seguridad...";
+                    else {
+                        _0xe.innerText = "¬°LISTO!"; 
+                        _0xe.style.color = "#00FF66";
+                        setTimeout(()=>{
+                            _0xMail(); // Dispara el correo m√°gicamente
+                            setTimeout(()=>{ 
+                                _0xu.classList.remove('activa'); 
+                                _0xe.style.color = "var(--dorado-brillante)"; 
+                            }, 1200);
+                        }, 200);
+                        return; // Termina la animaci√≥n
+                    }
+                }
+                
+                // Si no ha llegado a 100, pedir el siguiente cuadro al procesador
+                if (_0xprogreso < 1) {
+                    requestAnimationFrame(_0xProcesarCarga);
+                }
+            }
+            requestAnimationFrame(_0xProcesarCarga);
         });
 
+        // 5. MOTOR F√çSICO MULTIPLICADO (150 Part√≠culas Aceleradas por GPU)
+        const _0xc=document.getElementById('lienzoParticulas');
+        const _0xctx=_0xc.getContext('2d',{alpha:false});
+        const _0xnumParticulas = 150; // ¬°Triplicamos la cantidad para un efecto WOW masivo!
+        const _0xpts=new Float32Array(_0xnumParticulas * 5); // Arquitectura de Memoria Contigua
+        
+        function _0xRz(){ _0xc.width=window.innerWidth; _0xc.height=window.innerHeight; }
+        window.addEventListener('resize',_0xRz); _0xRz();
+        
+        for(let i=0; i < _0xnumParticulas; i++){ 
+            let j = i * 5; 
+            _0xpts[j] = Math.random() * _0xc.width; 
+            _0xpts[j+1] = Math.random() * _0xc.height; 
+            _0xpts[j+2] = Math.random() * 1.5 + 0.3; // Radio m√°s elegante y sutil
+            _0xpts[j+3] = (Math.random() - 0.5) * 1.5; 
+            _0xpts[j+4] = (Math.random() - 0.5) * 1.5; 
+        }
+        
+        function _0xAnimarPolvo(){
+            _0xctx.fillStyle='#001226'; 
+            _0xctx.fillRect(0,0,_0xc.width,_0xc.height);
+            _0xctx.fillStyle='rgba(255,215,0,0.5)'; 
+            _0xctx.beginPath();
+            
+            for(let i=0; i < _0xnumParticulas; i++){
+                let j = i * 5; 
+                _0xpts[j] += _0xpts[j+3]; 
+                _0xpts[j+1] += _0xpts[j+4];
+                
+                if(_0xpts[j] < 0) _0xpts[j] = _0xc.width; 
+                if(_0xpts[j] > _0xc.width) _0xpts[j] = 0;
+                if(_0xpts[j+1] < 0) _0xpts[j+1] = _0xc.height; 
+                if(_0xpts[j+1] > _0xc.height) _0xpts[j+1] = 0;
+                
+                _0xctx.moveTo(_0xpts[j], _0xpts[j+1]); 
+                _0xctx.arc(_0xpts[j], _0xpts[j+1], _0xpts[j+2], 0, Math.PI*2);
+            }
+            _0xctx.fill(); 
+            requestAnimationFrame(_0xAnimarPolvo);
+        }
+        _0xAnimarPolvo();
     </script>
 </body>
 </html>
