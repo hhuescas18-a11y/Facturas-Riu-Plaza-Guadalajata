@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIU Plaza Guadalajara - Solicitud de Factura Premium</title>
+    <style>
+        /* * ARQUITECTURA DE DISEÑO: CSS VARIABLES 
+         * Paleta de colores Premium: Azul Rey Fuerte y Dorado de lujo.
+         */
+        :root {
+            --color-fondo-profundo: #001A33; /* Fondo azul marino muy oscuro */
+            --color-dorado-primario: #FFD700; /* Dorado brillante */
+            --color-dorado-oscuro: #CCAC00; /* Dorado para degradados */
+            --color-texto-blanco: #FFFFFF;
+            --color-cristal: rgba(255, 255, 255, 0.08); /* Fondo translúcido del cristal */
+            --borde-cristal: rgba(255, 215, 0, 0.3); /* Borde sutil dorado */
+        }
+
+        /* Reseteo para eliminar márgenes del navegador y garantizar un lienzo limpio */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--color-fondo-profundo);
+            overflow: hidden; /* Evita que el usuario pueda scrollear accidentalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Lienzo de simulación física acelerado por GPU (Fondo animado) */
+        #lienzoParticulas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Se mantiene en el fondo */
+        }
+
+        /* * ARQUITECTURA GLASSMORPHISM 
+         * Crea el efecto de cristal elegante flotante utilizando desenfoque de fondo.
+         */
+        .tarjeta-cristal {
+            position: relative;
+            z-index: 10; /* Se coloca por encima de las partículas */
+            background: var(--color-cristal);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); /* Soporte para iPhones (Safari) */
+            border: 1px solid var(--borde-cristal);
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 90%;
+            width: 450px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
+
+        /* Estilos del Contenedor del Logo SVG */
+        .contenedor-logo {
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--color-dorado-primario);
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--color-texto-blanco);
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        /* Resaltado de términos clave solicitados en Dorado */
+        strong {
+            color: var(--color-dorado-primario);
+            font-weight: 600;
+        }
+
+        /* * EL BOTÓN MÁGICO: GIGANTE Y ACCESIBLE
+         * Diseñado para ser fácil de presionar con el pulgar.
+         */
+        .boton-dorado {
+            display: block;
+            background: linear-gradient(135deg, var(--color-dorado-primario) 0%, var(--color-dorado-oscuro) 100%);
+            color: var(--color-fondo-profundo);
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 20px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(204, 172, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .boton-dorado:hover, .boton-dorado:active {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(204, 172, 0, 0.5);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="lienzoParticulas" aria-hidden="true"></canvas>
+
+    <main>
+        <article class="tarjeta-cristal">
+            
+            <div class="contenedor-logo" aria-hidden="true">
+                <svg width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="45" font-family="Georgia, serif" font-size="38" font-weight="bold" fill="#FFD700" text-anchor="middle" letter-spacing="4">RIU</text>
+                    <text x="50%" y="60" font-family="system-ui, sans-serif" font-size="10" font-weight="normal" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">PLAZA GUADALAJARA</text>
+                </svg>
+            </div>
+
+            <h1 id="titulo-instruccion">Solicitud de Factura</h1>
+            
+            <p>Estimado cliente, recuerde adjuntar su <strong>ticket escaneado</strong> y sus <strong>datos fiscales</strong> al correo para poder procesar su solicitud de inmediato.</p>
+
+            <a href="mailto:factura.plazaguadalajara@riu.com?subject=Solicitud%20de%20Factura%20-%20Consumo%20en%20RIU%20Plaza%20Guadalajara&body=Buen%20d%C3%ADa.%0A%0APor%20medio%20del%20presente%20solicito%20atentamente%20la%20factura%20correspondiente%20a%20mi%20consumo%20en%20el%20hotel.%0A%0AAdjunto%20a%20este%20correo%20la%20imagen%20legible%20de%20mi%20ticket%20de%20compra%20y%20mis%20datos%20fiscales%20completos%20(RFC%2C%20Raz%C3%B3n%20Social%2C%20Direcci%C3%B3n%2C%20etc.)%20para%20la%20generaci%C3%B3n%20de%20la%20misma.%0A%0AAgradezco%20de%20antemano%20su%20amable%20atenci%C3%B3n%20y%20apoyo%20con%20mi%20solicitud.%20Que%20tenga%20un%20excelente%20d%C3%ADa." 
+               class="boton-dorado" 
+               aria-labelledby="titulo-instruccion">
+                Redactar Correo Automático
+            </a>
+            
+        </article>
+    </main>
+
+    <script>
+        /**
+         * @fileoverview Arquitectura de Simulación de Partículas Doradas (Fondo Animado).
+         * @description Implementación optimizada en JavaScript puro (Vanilla JS) usando requestAnimationFrame.
+         */
+
+        class Particula {
+            /**
+             * Representa un punto dorado flotante en la pantalla.
+             */
+            constructor(anchoPantalla, altoPantalla) {
+                this.reiniciar(anchoPantalla, altoPantalla);
+            }
+
+            /**
+             * Devuelve la partícula a una posición aleatoria dentro de la pantalla.
+             */
+            reiniciar(anchoPantalla, altoPantalla) {
+                this.x = Math.random() * anchoPantalla;
+                this.y = Math.random() * altoPantalla;
+                // Radio matemático pequeño para sutileza
+                this.radio = Math.random() * 1.5 + 0.5;
+                // Velocidad vectorial aleatoria
+                this.velocidadX = (Math.random() - 0.5) * 20; 
+                this.velocidadY = (Math.random() - 0.5) * 20;
+                // Opacidad aleatoria para dar profundidad
+                this.opacidad = Math.random() * 0.5 + 0.1;
+            }
+
+            /**
+             * Actualiza la posición basándose en el tiempo transcurrido (Delta Time).
+             */
+            actualizarPosicion(tiempoDiferencial, anchoPantalla, altoPantalla) {
+                this.x += this.velocidadX * tiempoDiferencial;
+                this.y += this.velocidadY * tiempoDiferencial;
+
+                // Si la partícula sale de la pantalla, reaparece al otro lado (Efecto toroide infinito)
+                if (this.x < 0) this.x = anchoPantalla;
+                if (this.x > anchoPantalla) this.x = 0;
+                if (this.y < 0) this.y = altoPantalla;
+                if (this.y > altoPantalla) this.y = 0;
+            }
+
+            /**
+             * Dibuja la partícula en el lienzo digital.
+             */
+            dibujarElemento(contexto) {
+                contexto.beginPath();
+                contexto.arc(this.x, this.y, this.radio, 0, Math.PI * 2);
+                contexto.fillStyle = `rgba(255, 215, 0, ${this.opacidad})`;
+                contexto.fill();
+            }
+        }
+
+        class MotorVisualizador {
+            constructor() {
+                this.lienzo = document.getElementById('lienzoParticulas');
+                this.contexto = this.lienzo.getContext('2d');
+                this.particulas = [];
+                // Cantidad conservadora para cuidar la memoria RAM y batería del celular
+                this.cantidadParticulas = 40; 
+                this.tiempoAnterior = performance.now();
+                
+                this.inicializarDimensiones();
+                this.crearPoblacionInicial();
+                
+                // Aseguramos que el motor responda si rotan el celular o cambian de tamaño la ventana
+                window.addEventListener('resize', () => this.inicializarDimensiones());
+                
+                // Arrancamos el ciclo de vida de la animación
+                this.iniciarCicloRenderizado();
+            }
+
+            inicializarDimensiones() {
+                // Ajustamos la resolución interna del lienzo a la pantalla real visible
+                this.lienzo.width = window.innerWidth;
+                this.lienzo.height = window.innerHeight;
+            }
+
+            crearPoblacionInicial() {
+                this.particulas = [];
+                for (let i = 0; i < this.cantidadParticulas; i++) {
+                    this.particulas.push(new Particula(this.lienzo.width, this.lienzo.height));
+                }
+            }
+
+            /**
+             * Ciclo vital impulsado por requestAnimationFrame para sincronizar con el monitor.
+             */
+            iniciarCicloRenderizado(tiempoActual = performance.now()) {
+                // 1. Calcular Delta Time (dt) en segundos
+                const tiempoDiferencial = (tiempoActual - this.tiempoAnterior) / 1000;
+                this.tiempoAnterior = tiempoActual;
+
+                // 2. Limpiar la pantalla por completo del cuadro anterior
+                this.contexto.clearRect(0, 0, this.lienzo.width, this.lienzo.height);
+
+                // 3. Actualizar matemática y dibujar cada partícula
+                for (let i = 0; i < this.particulas.length; i++) {
+                    const particula = this.particulas[i];
+                    particula.actualizarPosicion(tiempoDiferencial, this.lienzo.width, this.lienzo.height);
+                    particula.dibujarElemento(this.contexto);
+                }
+
+                // 4. Solicitar el siguiente cuadro a la tarjeta gráfica (Recursividad controlada)
+                requestAnimationFrame((nuevoTiempo) => this.iniciarCicloRenderizado(nuevoTiempo));
+            }
+        }
+
+        // Encender el motor visual una vez que la estructura HTML está construida
+        document.addEventListener('DOMContentLoaded', () => {
+            const motorVisual = new MotorVisualizador();
+        });
+
+    </script>
+</body>
+</html>
